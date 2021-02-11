@@ -1,6 +1,11 @@
 import http from 'http';
 import express from 'express';
 import logger from 'morgan';
+import socketio from "socket.io";
+
+// socket configuration
+import WebSockets from "./utils/WebSockets.js";
+
 
 // mongo config
 import './config/mongo.js';
@@ -42,6 +47,10 @@ app.use('*', (req, res) => {
 
 // create HTTP server
 const server = http.createServer(app); 
+
+// Create socket connection //
+global.io = socketio.listen(server);
+global.io.on('connection', WebSockets.connection)
 
 // listen on provided port, on all network interfaces
 server.listen(port);
