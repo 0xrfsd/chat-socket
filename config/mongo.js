@@ -1,4 +1,4 @@
-import mongoose, { mongo } from 'mongoose';
+import mongoose from 'mongoose';
 import config from './index.js';
 
 const CONNECTION_URL = `mongodb://${config.db.url}/${config.db.name}`

@@ -4,7 +4,7 @@ import express from 'express';
 import users from '../controllers/user.js';
 
 // middlewares 
-import { encodde } from '../middlewares/jwt.js';
+import { encode } from '../middlewares/jwt.js';
 
 const router = express.Router();
 
