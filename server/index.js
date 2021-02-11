@@ -1,7 +1,9 @@
 import http from 'http';
 import express from 'express';
 import logger from 'morgan';
-import cors from 'cors';
+
+// mongo config
+import './config/mongo.js';
 
 // routes
 import indexRouter from './routes/index.js';
